@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from models.RegressionFeatures import PeriodPredictionFeatureModel
 
-import pickle
+import _pickle as pickle
 import pandas as pd
 
 app = FastAPI()
