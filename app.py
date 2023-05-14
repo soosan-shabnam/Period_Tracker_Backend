@@ -16,7 +16,7 @@ app.add_middleware(
     allow_headers=['*']
 )
 
-rf = pickle.load(open("./randomForest.pkl", "rb"))
+# rf = pickle.load(open("./randomForest.pkl", "rb"))
 
 
 @app.get("/")
@@ -47,8 +47,8 @@ async def predict(data: PeriodPredictionFeatureModel):
             , index=[0]
         )
 
-        preds = rf.predict(df)
+        # preds = rf.predict(df)
 
-        return {"Next": preds[0]}
+        return {"Next": 0}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
